@@ -38,6 +38,12 @@ public:
 	const Color operator * (float s) const { Color color(*this); return color *= s; }
 	const Color operator / (float s) const { Color color(*this); return color /= s; }
 		
+
+	operator SDL_Color() const;
+
+	bool operator == (const Color & color) const { return Math::IsZero(r - color.r) && Math::IsZero(g - color.g) && Math::IsZero(b - color.b); }
+	bool operator != (const Color & color) const { return !(*this == color); }
+
 	static const Color red;
 	static const Color green;
 	static const Color blue;
@@ -47,12 +53,6 @@ public:
 	static const Color magenta;
 	static const Color cyan;
 	static const Color black;
-
-	operator SDL_Color() const;
-
-	bool operator == (const Color & color) const { return Math::IsZero(r - color.r) && Math::IsZero(g - color.g) && Math::IsZero(b - color.b); }
-	bool operator != (const Color & color) const { return !(*this == color); }
-
 
 	//friend std::ostream & operator << (std::ostream & stream, const Color & color) { stream << "{" << color.r << ", " << color.g << ", " << color.b << "}"; return stream; }
 	//friend std::istream & operator >> (std::istream & stream, Color & color);

@@ -29,12 +29,14 @@ const Color Color::black = Color(0.0f, 0.0f, 0.0f);
 //	return stream;
 //}
 
+
 Color::operator SDL_Color() const
 {
 	SDL_Color color;
 	color.r = ConvertU8(0);
-	color.g = ConvertU8(0);
-	color.b = ConvertU8(0);
+	color.g = ConvertU8(1);
+	color.b = ConvertU8(2);
 	color.a = 255;
 	return color;
 }
+

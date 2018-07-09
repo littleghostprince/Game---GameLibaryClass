@@ -2,6 +2,7 @@
 #include "vector2D.h"
 #include "color.h"
 #include <SDL_ttf.h>
+#include <string>
 
 class Text
 {

@@ -20,20 +20,22 @@ bool Engine::Initialize()
 	SDL_Init(SDL_INIT_EVERYTHING);
 	m_window = SDL_CreateWindow("Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_SHOWN);
 
-	text = TextManager::Instance()->CreateText("Hello!", "..\\content\\Inconsolata-Bold.ttf", 24, Color::red);
 
 	Timer::Instance()->Initalize(this);
 	Renderer::Instance()->Initalize(this);
 	TextureManager::Instance()->Initalize(this);
 	InputManager::Instance()->Initalize(this);
 	AudioSystem::Instance()->Initalize(this);
+	TextManager::Instance()->Initalize(this);
 
+	text = TextManager::Instance()->CreateText("Hello!", "..\\content\\comicsans.ttf", 100, Color::red);
 
 	return true;
 }
 
 void Engine::Shutdown()
 {
+	TextManager::Instance()->Initalize(this);
 	AudioSystem::Instance()->Shutdown();
 	InputManager::Instance()->Shutdown();
 	TextureManager::Instance()->Shutdown();
@@ -49,9 +51,6 @@ void Engine::Update()
 	Timer::Instance()->SetTimeScale(2.0f);
 	InputManager::Instance()->Update();
 
-	std::vector<Color> colors = { Color::red, Color::green, Color::white };
-	text->SetColor(colors[rand() % colors.size()]);
-	text->Draw(Vector2D(10.0f, 10.0f), 0.0f);
 
 
 	SDL_Event event;
@@ -101,7 +100,7 @@ void Engine::Update()
 
 
 	Renderer::Instance()->BeginFrame();
-	Renderer::Instance()->SetColor(Color::orange);
+	Renderer::Instance()->SetColor(Color::black);
 	//Draw
 	SDL_Texture* texture = TextureManager::Instance()->GetTexture("..\\content\\car.bmp");
 	Renderer::Instance()->DrawTexture(texture, position, angle);
@@ -109,6 +108,10 @@ void Engine::Update()
 	//Scale Draw
 	//const Vector2D scale(13.0f, 10.0f);
 	//Renderer::Instance()->DrawTexture(texture, position, scale, 0.0f);
+
+	std::vector<Color> colors = { Color::red, Color::green, Color::white };
+	text->SetColor(colors[rand() % colors.size()]);
+	text->Draw(Vector2D(400.0f, 300.0f), 0.0f);
 
 	Renderer::Instance()->EndFrame();
 

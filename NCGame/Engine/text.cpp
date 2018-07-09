@@ -4,11 +4,12 @@
 
 Text::Text(const std::string & text, const std::string & fontName, int size, const Color & color)
 {
-	this->Create();
 
-	TTF_Font * m_font = TTF_OpenFont(fontName.c_str(), 25);
+	m_font = TTF_OpenFont(fontName.c_str(), 25);
 	m_text = text;
 	m_color = color;
+
+	this->Create();
 }
 
 Text::~Text()
@@ -22,6 +23,7 @@ void Text::Draw(const Vector2D & position, float angle)
 	if (m_texture)
 	{
 		Renderer::Instance()->DrawTexture(m_texture, position, angle);
+		Create();
 	}
 
 }
@@ -61,9 +63,7 @@ void Text::Create()
 	{
 		SDL_DestroyTexture(m_texture);
 	}
-	else {
 		SDL_Surface* surface = TTF_RenderText_Solid(m_font, m_text.c_str(), m_color);
 		m_texture = SDL_CreateTextureFromSurface(Renderer::Instance()->GetRenderer(), surface);
-	}
 
 }

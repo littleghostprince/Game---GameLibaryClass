@@ -1,13 +1,12 @@
 #pragma once
-#include <iostream>
-
-#include "sdl.h"
 
 #ifdef ENGINE_EXPORTS  
 #define ENGINE_API __declspec(dllexport)   
 #else  
 #define ENGINE_API __declspec(dllimport)   
 #endif 
+
+#include "sdl.h"
 
 class TextureManager;
 
@@ -16,8 +15,6 @@ class ENGINE_API Engine
 public:
 	Engine() {}
 	~Engine() {}
-
-	void display() { std::cout << "Hello World"; }
 	
 	bool Initialize();
 	void Update();
