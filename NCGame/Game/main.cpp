@@ -1,8 +1,16 @@
 #include "Engine.h"
 
-int main(int argc, char* argv[])
+int wmain(int argc, char* argv[])
 {
 	Engine engine;
-	engine.display();
+
+	engine.Initialize();
+	while (!engine.isQuit())
+	{
+		engine.Update();
+	}
+	engine.Shutdown();
+
+
 	return 0;
 }
