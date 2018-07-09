@@ -8,10 +8,6 @@ TextManager::TextManager()
 }
 
 
-TextManager::~TextManager()
-{
-}
-
 bool TextManager::Initalize(Engine * engine)
 {	
 	m_engine = engine;
@@ -21,13 +17,13 @@ bool TextManager::Initalize(Engine * engine)
 
 void TextManager::Shutdown()
 {
-	TTF_Quit();
-
 	for (Text* text : m_texts)
 	{
 		delete text;
 	}
 	m_texts.clear();
+
+	TTF_Quit();
 }
 
 Text * TextManager::CreateText(const std::string & text, const std::string & fontName, int size, const Color & color)

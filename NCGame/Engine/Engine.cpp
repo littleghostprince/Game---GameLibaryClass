@@ -28,7 +28,7 @@ bool Engine::Initialize()
 	AudioSystem::Instance()->Initalize(this);
 	TextManager::Instance()->Initalize(this);
 
-	text = TextManager::Instance()->CreateText("Hello!", "..\\content\\comicsans.ttf", 100, Color::red);
+	text = TextManager::Instance()->CreateText("Guess what!", "..\\content\\comicsans.ttf", 100, Color::red);
 
 	return true;
 }
@@ -111,7 +111,7 @@ void Engine::Update()
 
 	std::vector<Color> colors = { Color::red, Color::green, Color::white };
 	text->SetColor(colors[rand() % colors.size()]);
-	text->Draw(Vector2D(400.0f, 300.0f), 0.0f);
+	text->Draw(Vector2D(200.0f, 300.0f), 0.0f);
 
 	Renderer::Instance()->EndFrame();
 

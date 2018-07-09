@@ -5,11 +5,11 @@
 Text::Text(const std::string & text, const std::string & fontName, int size, const Color & color)
 {
 
-	m_font = TTF_OpenFont(fontName.c_str(), 25);
+	m_font = TTF_OpenFont(fontName.c_str(), size);
 	m_text = text;
 	m_color = color;
 
-	this->Create();
+	Create();
 }
 
 Text::~Text()
@@ -59,11 +59,14 @@ void Text::SetColor(const Color & color)
 
 void Text::Create()
 {
+	assert(m_font);
+
 	if (m_texture)
 	{
 		SDL_DestroyTexture(m_texture);
 	}
 		SDL_Surface* surface = TTF_RenderText_Solid(m_font, m_text.c_str(), m_color);
 		m_texture = SDL_CreateTextureFromSurface(Renderer::Instance()->GetRenderer(), surface);
+		SDL_FreeSurface(surface);
 
 }

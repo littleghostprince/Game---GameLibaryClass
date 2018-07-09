@@ -1,2 +1,4 @@
-﻿  main.cpp
-c:\users\ashley\source\repos\gamelibaryclass\ncgame\game\main.cpp(1): fatal error C1083: Cannot open include file: 'Engine.h': No such file or directory
+﻿  Generating code
+  All 1 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Game.vcxproj -> C:\Users\Ashley\source\repos\GameLibaryClass\NCGame\x64\Release\Game.exe
