@@ -28,7 +28,15 @@ bool Engine::Initialize()
 	AudioSystem::Instance()->Initalize(this);
 	TextManager::Instance()->Initalize(this);
 
-	text = TextManager::Instance()->CreateText("Guess what!", "..\\content\\comicsans.ttf", 100, Color::red);
+	InputManager::Instance()->AddAction("fire", SDL_BUTTON_LEFT, InputManager::eDevice::MOUSE);
+	InputManager::Instance()->AddAction("left", SDL_SCANCODE_LEFT, InputManager::eDevice::KEYBOARD);
+	InputManager::Instance()->AddAction("right", SDL_SCANCODE_RIGHT, InputManager::eDevice::KEYBOARD);
+	InputManager::Instance()->AddAction("steer", InputManager::eAxis::X,InputManager::eDevice::MOUSE);
+	InputManager::Instance()->AddAction("horn", SDL_SCANCODE_SPACE, InputManager::eDevice::KEYBOARD);
+	
+	AudioSystem::Instance()->AddSound("horn", "..\\content\\horn.wav");
+	
+	text = TextManager::Instance()->CreateText("Hello There", "..\\content\\comicsans.ttf", 100, Color::red);
 
 	return true;
 }
@@ -74,30 +82,47 @@ void Engine::Update()
 
 	//input
 
-	if (InputManager::Instance()->GetButtonAction(SDL_SCANCODE_A) == InputManager::eAction::PRESSED)
+	if (InputManager::Instance()->GetActionButton("fire") == InputManager::eButtonState::PRESSED)
 	{
 		std::cout << "pressed" << std::endl;
 	}
+	if (InputManager::Instance()->GetActionButton("horn") == InputManager::eButtonState::PRESSED) 
+	{ 
+		AudioSystem::Instance()->Playsound("horn");
+	}
 
-	if ((InputManager::Instance()->GetButtonAction(SDL_SCANCODE_A) == InputManager::eAction::PRESSED) || 
-		(InputManager::Instance()->GetButtonAction(SDL_SCANCODE_A) == InputManager::eAction::HELD))
+	/*
+	if ((InputManager::Instance()->GetActionButton("left") == InputManager::eButtonState::PRESSED) ||
+		(InputManager::Instance()->GetActionButton("left") == InputManager::eButtonState::HELD))
 	{
 		angle -= 90.0f * Timer::Instance()->DeltaTime();
 	}
 
+	if ((InputManager::Instance()->GetActionButton("right") == InputManager::eButtonState::PRESSED) ||
+		(InputManager::Instance()->GetActionButton("right") == InputManager::eButtonState::HELD))
+	{
+		angle += 90.0f * Timer::Instance()->DeltaTime();
+	}
+	*/
+
 	const Uint8* keystate = SDL_GetKeyboardState(nullptr);
-	if (keystate[SDL_SCANCODE_LEFT]) angle -= 90.0f * Timer::Instance()->DeltaTime(); // How far you want to rotate in 1 second
-	if (keystate[SDL_SCANCODE_RIGHT])angle += 90.0f * Timer::Instance()->DeltaTime();
+
+	float steer = InputManager::Instance()->GetActionAxisRelative("steer");
+	angle += (steer * 50.0f) * Timer::Instance()->DeltaTime();
+
+	//if (keystate[SDL_SCANCODE_LEFT]) angle -= 90.0f * Timer::Instance()->DeltaTime(); // How far you want to rotate in 1 second
+	//if (keystate[SDL_SCANCODE_RIGHT])angle += 90.0f * Timer::Instance()->DeltaTime();
 
 	Vector2D force = Vector2D::zero;
 	if (keystate[SDL_SCANCODE_DOWN]) force.y = 200.0f * Timer::Instance()->DeltaTime();
 	if (keystate[SDL_SCANCODE_UP]) force.y = -200.0f * Timer::Instance()->DeltaTime();
 
+
 	Matrix22 mx;
 	mx.Rotate(angle * Math::DegreesToRadians);
 	force = force * mx;
 	position = position + force; 
-
+	
 
 	Renderer::Instance()->BeginFrame();
 	Renderer::Instance()->SetColor(Color::black);
@@ -109,9 +134,14 @@ void Engine::Update()
 	//const Vector2D scale(13.0f, 10.0f);
 	//Renderer::Instance()->DrawTexture(texture, position, scale, 0.0f);
 
+	float h = InputManager::Instance()->GetActionAxisAbsolute("steer");
+	std::string str = std::to_string(h);
+
 	std::vector<Color> colors = { Color::red, Color::green, Color::white };
-	text->SetColor(colors[rand() % colors.size()]);
+	text->SetText(str, colors[rand() % colors.size()]);
+	//text->SetColor(colors[rand() % colors.size()]);
 	text->Draw(Vector2D(200.0f, 300.0f), 0.0f);
+
 
 	Renderer::Instance()->EndFrame();
 
