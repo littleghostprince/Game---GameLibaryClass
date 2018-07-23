@@ -52,18 +52,6 @@ bool Game::Initalize()
 		m_scene->AddEntity(entity);
 	}
 
-	/*Entity* entity = new Entity(ID("player"));
-	TransformComponent* transformComponent = new TransformComponent(entity);
-	transformComponent->Create(Vector2D(400.0f, 500.0f));
-	entity->AddComponent(transformComponent);
-
-	SpriteComponent* spriteComponent = new SpriteComponent(entity);
-	spriteComponent->Create("..\\content\\ship.bmp");
-	entity->AddComponent(spriteComponent);
-
-	*/
-
-//	Entity* fentity = m_scene->FindEntity(ID("player"));
 
 	m_running = success;
 
@@ -94,12 +82,6 @@ void Game::Update()
 	m_scene->Draw();
 
 	Renderer::Instance()->EndFrame();
-	//float h = InputManager::Instance()->GetActionAxisAbsolute("steer");
-	//std::string str = std::to_string(h);
-
-	//std::vector<Color> colors = { Color::red, Color::green, Color::white };
-	//text->SetText(str, colors[rand() % colors.size()]);
-	//text->Draw(Vector2D(200.0f, 300.0f), 0.0f);
 
 
 }

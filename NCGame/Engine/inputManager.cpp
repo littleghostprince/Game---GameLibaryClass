@@ -181,7 +181,7 @@ float InputManager::GetAxisAbsolute(int id, eDevice device, int index)
 		axis = m_mousePosition[id];
 		break;
 	case eDevice::CONTROLLER:
-		assert(index < m_controllers.size());
+		assert(index < (int)m_controllers.size());
 		axis = m_controllers[index].axis[id];
 		break;
 	}
@@ -203,7 +203,7 @@ float InputManager::GetAxisRelative(int id, eDevice device, int index)
 		axis = m_mousePosition[id] - m_prevMousePosition[id];
 		break;
 	case eDevice::CONTROLLER:
-		assert(index < m_controllers.size());
+		assert(index < (int) m_controllers.size());
 		axis = m_controllers[index].axis[id] - m_controllers[index].prevAxis[id];
 		break;
 	}
@@ -224,7 +224,7 @@ bool InputManager::GetButtonDown(int id, eDevice device, int index)
 		buttonDown = m_mouseButtonState & SDL_BUTTON(id);
 		break;
 	case eDevice::CONTROLLER:
-		assert(index < m_controllers.size());
+		assert(index < (int)m_controllers.size());
 		buttonDown = m_controllers[index].buttonState[id];
 		break;
 	}
@@ -246,7 +246,7 @@ bool InputManager::GetPreviousButtonDown(int id, eDevice device, int index)
 		buttonDown = m_prevMouseButton & SDL_BUTTON(id);
 		break;
 	case eDevice::CONTROLLER:
-		assert(index < m_controllers.size());
+		assert(index < (int)m_controllers.size());
 		buttonDown = m_controllers[index].prevButtonState[id];
 		break;
 	}
