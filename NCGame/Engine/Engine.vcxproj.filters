@@ -19,13 +19,16 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{b8d5f644-6269-4746-b67c-5f3162cd65e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{55b25284-b9cd-4db3-bfa9-225af9de212f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="math.cpp">
-      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="matrix22.cpp">
       <Filter>Math</Filter>
@@ -63,6 +66,39 @@
     <ClCompile Include="textManager.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="_math.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="id.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="object.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="spriteComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="transformComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="shipControllerComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controllerComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -73,9 +109,6 @@
     </ClInclude>
     <ClInclude Include="audioSystem.h">
       <Filter>Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="math.h">
-      <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="matrix22.h">
       <Filter>Math</Filter>
@@ -109,6 +142,42 @@
     </ClInclude>
     <ClInclude Include="textManager.h">
       <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="_math.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="id.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="object.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="renderComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="spriteComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="transformComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="controllerComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="shipControllerComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>Systems</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

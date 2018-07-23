@@ -1,6 +1,6 @@
 #include "renderer.h"
-
-
+#include "texture.h"
+#include <SDL_image.h>
 
 bool Renderer::Initalize(Engine * engine)
 {
@@ -12,6 +12,7 @@ bool Renderer::Initalize(Engine * engine)
 void Renderer::Shutdown()
 {
 	SDL_DestroyRenderer(m_renderer);
+	IMG_Quit();
 }
 
 void Renderer::BeginFrame()
@@ -45,6 +46,12 @@ void Renderer::DrawTexture(SDL_Texture * texture, const Vector2D & position, con
 	dest.w *= scale.x;
 	dest.h *= scale.y;
 	SDL_RenderCopyEx(m_renderer, texture, nullptr, &dest, angle, nullptr, SDL_FLIP_NONE);
+
+}
+
+void Renderer::DrawTexture(Texture * texture, const Vector2D & position, const Vector2D & scale, float angle)
+{
+	DrawTexture(texture->m_sdlTexture, position, scale, angle);
 }
 
 Renderer::Renderer()

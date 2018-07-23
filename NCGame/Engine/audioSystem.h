@@ -5,11 +5,12 @@
 #include <fmod.hpp>
 #include <map>
 
-class AudioSystem : public Singleton<AudioSystem>
+class ENGINE_API AudioSystem : public Singleton<AudioSystem>
 {
 public:
 	bool Initalize(Engine* engine);
 	void Shutdown();
+	void update();
 
 	void AddSound(const std::string & id, const std::string& filename);
 	void Playsound(const std::string& id);

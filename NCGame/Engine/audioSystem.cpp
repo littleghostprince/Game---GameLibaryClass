@@ -22,8 +22,16 @@ void AudioSystem::Shutdown()
 	{
 		audio.second->release();
 	}
+	m_sounds.clear();
+
 	m_fmodSystem->close();
 	m_fmodSystem->release();
+}
+
+void AudioSystem::update()
+{
+	FMOD_RESULT result = m_fmodSystem->update();
+	assert(result == FMOD_OK);
 }
 
 void AudioSystem::AddSound(const std::string & id, const std::string & filename)

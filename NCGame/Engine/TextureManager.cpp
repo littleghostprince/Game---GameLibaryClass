@@ -2,7 +2,6 @@
 #include "renderer.h"
 #include <cassert>
 
-TextureManager* TextureManager::m_instance = nullptr;
 
 bool TextureManager::Initalize(Engine * engine)
 {

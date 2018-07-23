@@ -1,7 +1,7 @@
 #include "singleton.h"
 #include "Engine.h"
 
-class Timer : public Singleton<Timer>
+class ENGINE_API Timer : public Singleton<Timer>
 {
 public:
 	bool Initalize(Engine* engine);
