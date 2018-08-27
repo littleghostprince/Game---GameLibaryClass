@@ -1,6 +1,2 @@
-﻿  Engine.cpp
-  renderer.cpp
-c:\users\ashley\source\repos\gamelibaryclass\ncgame\engine\renderer.cpp(46): warning C4244: '*=': conversion from 'const float' to 'int', possible loss of data
-c:\users\ashley\source\repos\gamelibaryclass\ncgame\engine\renderer.cpp(47): warning C4244: '*=': conversion from 'const float' to 'int', possible loss of data
-  Generating Code...
+﻿  animationComponent.cpp
   Engine.vcxproj -> C:\Users\Ashley\source\repos\GameLibaryClass\NCGame\Debug\Engine.dll

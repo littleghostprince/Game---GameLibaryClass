@@ -132,8 +132,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="..\Engine\explosion.cpp" />
+    <ClCompile Include="enemy.cpp" />
+    <ClCompile Include="enemyControllerComponent.cpp" />
+    <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="missile.cpp" />
+    <ClCompile Include="ship.cpp" />
+    <ClCompile Include="shipControllerComponent.cpp" />
+    <ClCompile Include="states.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Engine\Engine.vcxproj">
@@ -141,7 +148,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Engine\explosion.h" />
+    <ClInclude Include="enemy.h" />
+    <ClInclude Include="enemyControllerComponent.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="missile.h" />
+    <ClInclude Include="ship.h" />
+    <ClInclude Include="shipControllerComponent.h" />
+    <ClInclude Include="states.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

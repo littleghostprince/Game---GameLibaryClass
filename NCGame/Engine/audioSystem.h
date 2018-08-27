@@ -12,7 +12,7 @@ public:
 	void Shutdown();
 	void update();
 
-	void AddSound(const std::string & id, const std::string& filename);
+	void AddSound(const std::string & id, const std::string& audioname);
 	void Playsound(const std::string& id);
 	void RemoveSound(const std::string& id);
 	

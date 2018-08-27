@@ -1,8 +1,7 @@
-﻿  renderer.cpp
-     Creating library C:\Users\Ashley\source\repos\GameLibaryClass\NCGame\x64\Release\Engine.lib and object C:\Users\Ashley\source\repos\GameLibaryClass\NCGame\x64\Release\Engine.exp
+﻿     Creating library C:\Users\Ashley\source\repos\GameLibaryClass\NCGame\x64\Release\Engine.lib and object C:\Users\Ashley\source\repos\GameLibaryClass\NCGame\x64\Release\Engine.exp
   Generating code
-  3 of 1342 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  1 of 2095 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    3 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Engine.vcxproj -> C:\Users\Ashley\source\repos\GameLibaryClass\NCGame\x64\Release\Engine.dll

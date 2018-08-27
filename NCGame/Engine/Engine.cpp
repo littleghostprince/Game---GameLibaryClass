@@ -11,7 +11,8 @@
 #include "text.h"
 #include "textManager.h"
 #include <SDL_image.h>
-
+#include "physics.h"
+#include "fileSystem.h"
 
 
 bool Engine::Initialize()
@@ -21,34 +22,47 @@ bool Engine::Initialize()
 
 	m_window = SDL_CreateWindow("Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_SHOWN);
 
-
+	FileSystem::Instance()->Initalize(this);
 	Timer::Instance()->Initalize(this);
 	Renderer::Instance()->Initalize(this);
 	TextureManager::Instance()->Initalize(this);
 	InputManager::Instance()->Initalize(this);
 	AudioSystem::Instance()->Initalize(this);
 	TextManager::Instance()->Initalize(this);
+	Physics::Instance()->Initialize(this);
+
+	m_isDebug = false;
 
 	return true;
 }
 
 void Engine::Shutdown()
 {
+	Physics::Instance()->Shutdown();
 	TextManager::Instance()->Shutdown();
 	AudioSystem::Instance()->Shutdown();
 	InputManager::Instance()->Shutdown();
 	TextureManager::Instance()->Shutdown();
 	Renderer::Instance()->Shutdown();
 	Timer::Instance()->Shutdown();
+	FileSystem::Instance()->Shutdown();
+
 	SDL_DestroyWindow(m_window);
 	SDL_Quit();
 }
 
 void Engine::Update()
 {
+	Timer::Instance()->Update();
+	Timer::Instance()->SetTimeScale(1.0f);
+	InputManager::Instance()->Update();
+	AudioSystem::Instance()->update();
+	Physics::Instance()->Update();
+	FileSystem::Instance()->Update();
 
 	SDL_Event event;
 	SDL_PollEvent(&event);
+
 
 	switch (event.type)
 	{
@@ -63,6 +77,12 @@ void Engine::Update()
 		break;
 	}
 
+	SDL_PumpEvents();
+
+	if (InputManager::Instance()->GetButtonState(SDL_SCANCODE_GRAVE) == InputManager::eButtonState::PRESSED)
+	{
+		m_isDebug = !m_isDebug;
+	}
 
 }
 

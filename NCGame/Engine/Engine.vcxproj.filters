@@ -25,11 +25,17 @@
     <Filter Include="Components">
       <UniqueIdentifier>{55b25284-b9cd-4db3-bfa9-225af9de212f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{d07aaf88-f19a-4100-8c50-45920ca7c996}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Event">
+      <UniqueIdentifier>{a52350be-4d41-4e2e-80a7-73edef3e1b79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{fc2b4431-0114-4120-a821-23a0ef95b3e6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Engine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="matrix22.cpp">
       <Filter>Math</Filter>
     </ClCompile>
@@ -45,9 +51,6 @@
     <ClCompile Include="color.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="TextureManager.cpp">
-      <Filter>Graphics</Filter>
-    </ClCompile>
     <ClCompile Include="renderer.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
@@ -55,9 +58,6 @@
       <Filter>Systems</Filter>
     </ClCompile>
     <ClCompile Include="inputManager.cpp">
-      <Filter>Systems</Filter>
-    </ClCompile>
-    <ClCompile Include="Timer.cpp">
       <Filter>Systems</Filter>
     </ClCompile>
     <ClCompile Include="text.cpp">
@@ -90,20 +90,68 @@
     <ClCompile Include="texture.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="shipControllerComponent.cpp">
+    <ClCompile Include="kinematicComponent.cpp">
       <Filter>Components</Filter>
     </ClCompile>
+    <ClCompile Include="transform.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
     <ClCompile Include="scene.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="fileSystem.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="physics.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="aabb.cpp">
+      <Filter>Physics</Filter>
     </ClCompile>
     <ClCompile Include="controllerComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="aabbComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="textComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="animationComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="state.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="stateMachine.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="waypoints.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="debugDraw.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="waypointControllerComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="transformControllerComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="eventManager.cpp">
+      <Filter>Event</Filter>
+    </ClCompile>
+    <ClCompile Include="textureManager.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="timer.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="singleton.h">
-      <Filter>Systems</Filter>
-    </ClInclude>
     <ClInclude Include="inputManager.h">
       <Filter>Systems</Filter>
     </ClInclude>
@@ -125,17 +173,11 @@
     <ClInclude Include="color.h">
       <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="TextureManager.h">
-      <Filter>Graphics</Filter>
-    </ClInclude>
     <ClInclude Include="renderer.h">
       <Filter>Graphics</Filter>
     </ClInclude>
     <ClInclude Include="timer.h">
       <Filter>Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine.h">
-      <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="text.h">
       <Filter>Graphics</Filter>
@@ -173,11 +215,77 @@
     <ClInclude Include="controllerComponent.h">
       <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="shipControllerComponent.h">
-      <Filter>Components</Filter>
-    </ClInclude>
     <ClInclude Include="scene.h">
       <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="physicsComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="kinematicComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="transform.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="fileSystem.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="collision.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="physics.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="aabb.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="aabbComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="event.h">
+      <Filter>Event</Filter>
+    </ClInclude>
+    <ClInclude Include="textComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="eventReciver.h">
+      <Filter>Event</Filter>
+    </ClInclude>
+    <ClInclude Include="eventManager.h">
+      <Filter>Event</Filter>
+    </ClInclude>
+    <ClInclude Include="animationComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="state.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="stateMachine.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="variant.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="waypoints.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="debugDraw.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="waypointControllerComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="transformControllerComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="textureManager.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="engine.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -23,6 +23,10 @@ public:
 	void DrawTexture(SDL_Texture* texture, const Vector2D& position, const Vector2D& scale, float angle);
 	void DrawTexture(Texture* texture, const Vector2D& position, const Vector2D& scale, float angle);
 
+	void DebugDrawLine(const Vector2D& start, const Vector2D& end, const Color& color = Color::red);
+
+	Vector2D GetSize();
+
 	friend Singleton<Renderer>;
 
 protected:

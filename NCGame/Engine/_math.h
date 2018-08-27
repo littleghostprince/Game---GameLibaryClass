@@ -22,6 +22,7 @@ namespace  Math
 		ENGINE_API float Lerp(float v1, float v2, float t);
 		ENGINE_API float LerpUnclamped(float v1, float v2, float t);
 		ENGINE_API bool IsZero(float value);
+		ENGINE_API float LerpDegrees(float v1, float v2, float t);
 #ifdef __cplusplus
 	}
 #endif

@@ -13,18 +13,66 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{a829b255-22f3-414c-9d51-85fa19a6ffea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{32f08f65-b5d6-4725-9f4a-c83cf89c65af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
+    <ClCompile Include="shipControllerComponent.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="ship.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="missile.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="enemy.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="states.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Engine\explosion.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyControllerComponent.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shipControllerComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="ship.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="missile.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyControllerComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="states.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine\explosion.h">
+      <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

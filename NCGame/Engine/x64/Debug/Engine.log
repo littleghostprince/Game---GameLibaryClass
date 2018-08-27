@@ -1,2 +1,34 @@
 ﻿  Engine.cpp
+  EventManager.cpp
+  TextureManager.cpp
+  aabb.cpp
+  aabbComponent.cpp
+  animationComponent.cpp
+  debugDraw.cpp
+  entity.cpp
+  inputManager.cpp
+  kinematicComponent.cpp
+  matrix22.cpp
+  matrix33.cpp
+  physics.cpp
+  renderer.cpp
+  scene.cpp
+  spriteComponent.cpp
+  text.cpp
+  textComponent.cpp
+  textManager.cpp
+  texture.cpp
+  Generating Code...
+  Compiling...
+  transform.cpp
+  transformComponent.cpp
+  transformControllerComponent.cpp
+  vector2D.cpp
+  vector3D.cpp
+  waypointControllerComponent.cpp
+c:\users\ashley\source\repos\gamelibaryclass\ncgame\engine\waypointcontrollercomponent.cpp(70): warning C4506: no definition for inline function 'Vector2D Vector2D::Rotate(const Vector2D &,float)'
+c:\users\ashley\source\repos\gamelibaryclass\ncgame\engine\waypointcontrollercomponent.cpp(70): warning C4506: no definition for inline function 'float Vector2D::GetAngle(const Vector2D &)'
+  waypoints.cpp
+  Generating Code...
+     Creating library C:\Users\Ashley\source\repos\GameLibaryClass\NCGame\x64\Debug\Engine.lib and object C:\Users\Ashley\source\repos\GameLibaryClass\NCGame\x64\Debug\Engine.exp
   Engine.vcxproj -> C:\Users\Ashley\source\repos\GameLibaryClass\NCGame\x64\Debug\Engine.dll

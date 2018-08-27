@@ -7,7 +7,7 @@
 
 class Texture;
 
-class ENGINE_API ShipControllerComponent : public IControllerComponent
+class ShipControllerComponent : public IControllerComponent
 {
 public:
 	ShipControllerComponent(Entity* owner) : IControllerComponent(owner) {}
