@@ -6,9 +6,9 @@
   Component.cpp
   controllerComponent.cpp
   debugDraw.cpp
-  Engine.cpp
+  engine.cpp
   entity.cpp
-  EventManager.cpp
+  eventManager.cpp
   fileSystem.cpp
   id.cpp
   inputManager.cpp
@@ -22,12 +22,14 @@
   stateMachine.cpp
   textComponent.cpp
   texture.cpp
+  textureManager.cpp
+  timer.cpp
   transform.cpp
   transformComponent.cpp
   transformControllerComponent.cpp
   waypointControllerComponent.cpp
-c:\users\ashley\source\repos\gamelibaryclass\ncgame\engine\waypointcontrollercomponent.cpp(70): warning C4506: no definition for inline function 'Vector2D Vector2D::Rotate(const Vector2D &,float)'
-c:\users\ashley\source\repos\gamelibaryclass\ncgame\engine\waypointcontrollercomponent.cpp(70): warning C4506: no definition for inline function 'float Vector2D::GetAngle(const Vector2D &)'
+c:\users\ashley\documents\github\game---gamelibaryclass\ncgame\engine\waypointcontrollercomponent.cpp(70): warning C4506: no definition for inline function 'Vector2D Vector2D::Rotate(const Vector2D &,float)'
+c:\users\ashley\documents\github\game---gamelibaryclass\ncgame\engine\waypointcontrollercomponent.cpp(70): warning C4506: no definition for inline function 'float Vector2D::GetAngle(const Vector2D &)'
   waypoints.cpp
   _math.cpp
   matrix22.cpp
@@ -35,14 +37,10 @@ c:\users\ashley\source\repos\gamelibaryclass\ncgame\engine\waypointcontrollercom
   renderer.cpp
   text.cpp
   textManager.cpp
-  TextureManager.cpp
-  Timer.cpp
   vector2D.cpp
   vector3D.cpp
-     Creating library C:\Users\Ashley\source\repos\GameLibaryClass\NCGame\Release\Engine.lib and object C:\Users\Ashley\source\repos\GameLibaryClass\NCGame\Release\Engine.exp
+     Creating library C:\Users\Ashley\Documents\GitHub\Game---GameLibaryClass\NCGame\Release\Engine.lib and object C:\Users\Ashley\Documents\GitHub\Game---GameLibaryClass\NCGame\Release\Engine.exp
   Generating code
-  1317 of 2100 functions (62.7%) were compiled, the rest were copied from previous compilation.
-    819 functions were new in current compilation
-    147 functions had inline decision re-evaluated but remain unchanged
+  All 2100 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
-  Engine.vcxproj -> C:\Users\Ashley\source\repos\GameLibaryClass\NCGame\Release\Engine.dll
+  Engine.vcxproj -> C:\Users\Ashley\Documents\GitHub\Game---GameLibaryClass\NCGame\Release\Engine.dll
