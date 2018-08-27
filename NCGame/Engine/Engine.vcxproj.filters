@@ -78,9 +78,6 @@
     <ClCompile Include="entity.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Component.cpp">
-      <Filter>Components</Filter>
-    </ClCompile>
     <ClCompile Include="spriteComponent.cpp">
       <Filter>Components</Filter>
     </ClCompile>
@@ -149,6 +146,9 @@
     </ClCompile>
     <ClCompile Include="timer.cpp">
       <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="component.cpp">
+      <Filter>Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

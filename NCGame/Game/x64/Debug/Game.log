@@ -1,11 +1,1 @@
-﻿  explosion.cpp
-  enemy.cpp
-  enemyControllerComponent.cpp
-  game.cpp
-  main.cpp
-  missile.cpp
-  ship.cpp
-  shipControllerComponent.cpp
-  states.cpp
-  Generating Code...
-  Game.vcxproj -> C:\Users\Ashley\Documents\GitHub\Game---GameLibaryClass\NCGame\x64\Debug\Game.exe
+﻿  Game.vcxproj -> C:\Users\Ashley\Documents\GitHub\Game---GameLibaryClass\NCGame\x64\Debug\Game.exe
