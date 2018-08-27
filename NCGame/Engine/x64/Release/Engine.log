@@ -1,8 +1,35 @@
-﻿  vector2D.cpp
+﻿  aabb.cpp
+  aabbComponent.cpp
+  animationComponent.cpp
+  debugDraw.cpp
+  engine.cpp
+  entity.cpp
+  eventManager.cpp
+  inputManager.cpp
+  kinematicComponent.cpp
+  matrix22.cpp
+  matrix33.cpp
+  physics.cpp
+  renderer.cpp
+  scene.cpp
+  spriteComponent.cpp
+  text.cpp
+  textComponent.cpp
+  textManager.cpp
+  texture.cpp
+  textureManager.cpp
+  Compiling...
+  transform.cpp
+  transformComponent.cpp
+  transformControllerComponent.cpp
+  vector2D.cpp
+  vector3D.cpp
+  waypointControllerComponent.cpp
+  waypoints.cpp
      Creating library C:\Users\Ashley\Documents\GitHub\Game---GameLibaryClass\NCGame\x64\Release\Engine.lib and object C:\Users\Ashley\Documents\GitHub\Game---GameLibaryClass\NCGame\x64\Release\Engine.exp
   Generating code
-  0 of 2095 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  8 of 2095 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Engine.vcxproj -> C:\Users\Ashley\Documents\GitHub\Game---GameLibaryClass\NCGame\x64\Release\Engine.dll

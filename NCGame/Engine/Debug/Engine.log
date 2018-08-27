@@ -1,45 +1,32 @@
 ﻿  aabb.cpp
   aabbComponent.cpp
   animationComponent.cpp
-  audioSystem.cpp
-  color.cpp
-  Component.cpp
-  controllerComponent.cpp
   debugDraw.cpp
   engine.cpp
   entity.cpp
   eventManager.cpp
-  fileSystem.cpp
-  id.cpp
   inputManager.cpp
   kinematicComponent.cpp
-  object.cpp
+  matrix22.cpp
+  matrix33.cpp
   physics.cpp
+  renderer.cpp
   scene.cpp
   spriteComponent.cpp
-  state.cpp
-  Generating Code...
-  Compiling...
-  stateMachine.cpp
+  text.cpp
   textComponent.cpp
+  textManager.cpp
   texture.cpp
   textureManager.cpp
-  timer.cpp
+  Generating Code...
+  Compiling...
   transform.cpp
   transformComponent.cpp
   transformControllerComponent.cpp
-  waypointControllerComponent.cpp
-c:\users\ashley\documents\github\game---gamelibaryclass\ncgame\engine\waypointcontrollercomponent.cpp(70): warning C4506: no definition for inline function 'Vector2D Vector2D::Rotate(const Vector2D &,float)'
-c:\users\ashley\documents\github\game---gamelibaryclass\ncgame\engine\waypointcontrollercomponent.cpp(70): warning C4506: no definition for inline function 'float Vector2D::GetAngle(const Vector2D &)'
-  waypoints.cpp
-  _math.cpp
-  matrix22.cpp
-  matrix33.cpp
-  renderer.cpp
-  text.cpp
-  textManager.cpp
   vector2D.cpp
   vector3D.cpp
+  waypointControllerComponent.cpp
+  waypoints.cpp
   Generating Code...
      Creating library C:\Users\Ashley\Documents\GitHub\Game---GameLibaryClass\NCGame\Debug\Engine.lib and object C:\Users\Ashley\Documents\GitHub\Game---GameLibaryClass\NCGame\Debug\Engine.exp
   Engine.vcxproj -> C:\Users\Ashley\Documents\GitHub\Game---GameLibaryClass\NCGame\Debug\Engine.dll
