@@ -1,1 +1,9 @@
-﻿  Engine.vcxproj -> C:\Users\Ashley\Documents\GitHub\Game---GameLibaryClass\NCGame\Debug\Engine.dll
+﻿  animationComponent.cpp
+  engine.cpp
+  kinematicComponent.cpp
+  timer.cpp
+  transformControllerComponent.cpp
+  waypointControllerComponent.cpp
+  Generating Code...
+     Creating library C:\Users\Ashley\Documents\GitHub\Game---GameLibaryClass\NCGame\Debug\Engine.lib and object C:\Users\Ashley\Documents\GitHub\Game---GameLibaryClass\NCGame\Debug\Engine.exp
+  Engine.vcxproj -> C:\Users\Ashley\Documents\GitHub\Game---GameLibaryClass\NCGame\Debug\Engine.dll

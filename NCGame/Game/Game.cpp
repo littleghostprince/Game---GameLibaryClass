@@ -25,7 +25,7 @@
 Vector2D position(400.0f, 300.0f);
 float angle = 0.0f;
 Text* text;
-
+float time = 200.0f;
 
 Game::~Game()
 {
@@ -42,6 +42,7 @@ bool Game::Initalize()
 	m_stateMachine = new StateMachine(m_scene);
 	
 	m_stateMachine->AddState("title", new TitleState(m_stateMachine));
+	m_stateMachine->AddState("enter_stage", new EnterStageState(m_stateMachine));
 	m_stateMachine->AddState("game", new GameState(m_stateMachine));
 
 	m_stateMachine->SetState("title");
@@ -52,6 +53,10 @@ bool Game::Initalize()
 	textComponent->Create("0000","namco.ttf",18,Color::white);
 	textComponent->SetDepth(100);
 	m_scene->AddEntity(entity);
+
+	Ship* ship = new Ship(m_scene, "player");
+	ship->Create(Vector2D(400, 510));
+	m_scene->AddEntity(ship);
 
 
 	m_running = success;
@@ -89,6 +94,19 @@ void Game::Update()
 	Renderer::Instance()->SetColor(Color::black);
 	Renderer::Instance()->BeginFrame();
 
+	time--;
+
+	if (m_scene->FindEntity("player") == nullptr)
+	{
+		if (time <= 0.0f)
+		{
+			time = 200.0f;
+			Ship* ship = new Ship(m_scene, "player");
+			ship->Create(Vector2D(400, 510));
+			m_scene->AddEntity(ship);
+		}
+	}
+
 	//draw
 	m_scene->Update();
 	m_scene->Draw();
@@ -105,3 +123,5 @@ void Game::OnEvent(const Event & event)
 		m_score = m_score + event.variant[0].asInteger; //event.integer
 	}
 }
+
+// The End

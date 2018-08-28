@@ -26,6 +26,13 @@ void Timer::Update()
 	m_dt = std::min<float>(m_dt, 1.0f);
 }
 
+void Timer::Reset()
+{
+	m_prevTicks = SDL_GetTicks();
+	m_prevTicks = SDL_GetTicks();
+
+}
+
 Timer::Timer()
 {
 }

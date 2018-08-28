@@ -5,6 +5,8 @@
 #include "inputManager.h"
 #include "enemy.h"
 #include "ship.h"
+#include "formation.h"
+#include "timer.h"
 
 void TitleState::Enter()
 {
@@ -24,7 +26,7 @@ void TitleState::Update()
 {
 	if (InputManager::Instance()->GetActionButton("start") == InputManager::eButtonState::PRESSED)
 	{
-		m_owner->SetState("game");
+		m_owner->SetState("enter_stage");
 	}
 }
 
@@ -37,29 +39,33 @@ void TitleState::Exit()
 	}
 }
 
+void EnterStageState::Enter()
+{
+	Formation* formation = dynamic_cast<Formation*>(m_owner->GetScene()->FindEntity("formation"));
+	if (formation == nullptr)
+	{
+		formation = m_owner->GetScene()->AddEntity<Formation>("formation");
+		formation->Create();
+	}
+	
+}
+
+void EnterStageState::Update()
+{
+	Timer::Instance()->Reset();
+
+	Formation* formation = dynamic_cast<Formation*>(m_owner->GetScene()->FindEntity("formation"));
+	formation->Update();
+
+}
+
+void EnterStageState::Exit()
+{
+}
+
 void GameState::Enter()
 {
 
-	Ship* ship = new Ship(m_owner->GetScene(), "player");
-	ship->Create(Vector2D(400, 510));
-
-	m_owner->GetScene()->AddEntity(ship);
-	
-
-	std::vector<Enemy::Info> formation = 
-	{
-		{Enemy::BEE, Enemy::LEFT,300.0f,Vector2D(100.0f,100.0f)} ,
-		{ Enemy::BOSS, Enemy::LEFT,300.0f,Vector2D(140.0f,100.0f)},
-		{ Enemy::BEE, Enemy::LEFT,300.0f,Vector2D(180.0f,100.0f) },
-		{ Enemy::BEE, Enemy::RIGHT,300.0f,Vector2D(700.0f,100.0f) },
-		{ Enemy::BOSS, Enemy::RIGHT,300.0f,Vector2D(660.0f,100.0f) }
-	};
-
-	for (Enemy::Info info : formation)
-	{
-		Enemy* enemy = m_owner->GetScene()->AddEntity<Enemy>();
-		enemy->Create(info);
-	}
 }
 
 void GameState::Update()
@@ -69,3 +75,4 @@ void GameState::Update()
 void GameState::Exit()
 {
 }
+

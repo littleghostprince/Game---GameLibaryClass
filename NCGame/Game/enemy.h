@@ -10,6 +10,8 @@ public:
 	enum eType
 	{
 		BEE,
+		BUG,
+		BUG2,
 		BOSS,
 	};
 
@@ -24,7 +26,9 @@ public:
 		eType type;
 		eSide side;
 		float speed;
+		float points;
 		Vector2D target;
+		class Formation* formation;
 	};
 public:
 	Enemy(Scene * scene, const ID& id) : Entity(scene,id) {}

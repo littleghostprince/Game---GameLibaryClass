@@ -17,6 +17,8 @@ public:
 	void UnPause() { m_paused = false; }
 	bool IsPaused() const{ return m_paused; }
 
+	void Reset();
+
 	friend Singleton<Timer>;
 
 protected:

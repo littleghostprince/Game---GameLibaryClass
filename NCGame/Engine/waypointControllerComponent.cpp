@@ -5,11 +5,13 @@
 #include "vector2D.h"
 #include "debugDraw.h"
 
-void WaypointControllerComponent::Create(const std::vector<Vector2D>& points, float speed)
+void WaypointControllerComponent::Create(const std::vector<Vector2D>& points, float speed, float turnRate, bool setPositionAtStart)
 {
 	m_speed = speed;
 	m_timer = Math::GetRandomRange(m_fireRateMin, m_fireRateMax);
+	m_turnRate = turnRate;
 
+	//create waypoints
 	for (Vector2D point : points)
 	{
 		Waypoint* waypoint = m_owner->GetScene()->AddEntity<Waypoint>();
@@ -19,6 +21,11 @@ void WaypointControllerComponent::Create(const std::vector<Vector2D>& points, fl
 	}
 	m_waypointIndex = 0;
 	m_waypoint = m_waypoints[m_waypointIndex];
+
+	if (setPositionAtStart)
+	{
+		m_owner->GetTransform().position = m_waypoint->GetTransform().position;
+	}
 }
 
 void WaypointControllerComponent::Destroy()
